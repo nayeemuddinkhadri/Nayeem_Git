@@ -4,12 +4,3 @@
 4-four
 5-five
 6-six
-7-seven
-8-eight
-9-nine
-10-ten
-11-elevecn
-12-twelve
-13-th
-14-fourteen
-15-fifteen
