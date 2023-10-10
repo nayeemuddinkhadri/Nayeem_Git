@@ -4,3 +4,6 @@
 4-four
 5-five
 6-six
+10-ten
+11-elevecn
+12-twelve
