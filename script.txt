@@ -1,0 +1,52 @@
+
+peline {
+    agent any
+
+    stages {
+        stage('Clean Workspace') {
+            steps {
+                deleteDir()
+            }
+        }
+
+        stage('Clone Repository') {
+            steps {
+                script {
+                    // Creating a variable to define the directory
+                    def workspaceDir = "$WORKSPACE/b7-java"
+                    // Cloning the repository into the defined directory
+                    sh "git clone https://github.com/adikarthik/b7-java.git ${workspaceDir}"
+                }
+            }
+        }
+
+        stage('Clean Maven Project') {
+            steps {
+                script {
+                    // Defining the workspace directory
+                    def workspaceDir = "$WORKSPACE/b7-java"
+                    // Changing to the workspace directory and running 'mvn clean'
+                    dir(workspaceDir) {
+                        sh 'mvn clean'
+                    }
+                }
+            }
+        }
+
+        stage('Install Maven Project') {
+            steps {
+                script {
+                    // Defining the workspace directory
+                    def workspaceDir = "$WORKSPACE/b7-java"
+                    // Changing to the workspace directory and running 'mvn install'
+                    dir(workspaceDir) {
+                        sh 'mvn install'
+                    }
+                }
+            }
+            
+            }
+        }
+    }
+
+Bangalore in capital city of karnataka.
